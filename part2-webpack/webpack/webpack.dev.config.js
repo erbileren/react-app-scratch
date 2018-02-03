@@ -11,8 +11,8 @@ module.exports = {
                 exclude: /node_modules/,
                 loader: 'babel-loader'
             }, {
-                test: /\.less$/,
-                loaders: ["style-loader", "css-loder", "less-loader"]
+                test: /\.(css|less)$/,
+                loaders: ["style-loader", "css-loader", "less-loader"]
             }
         ]
     },
