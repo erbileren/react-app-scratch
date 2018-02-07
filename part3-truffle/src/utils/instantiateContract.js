@@ -27,7 +27,6 @@ class instantiateContract {
                 simpleContract
                     .deployed()
                     .then((instance) => {
-                        // Stores a given value, 5 by default.
                         return instance.setData(val, {from: accounts[0]})
                     })
                     .catch((error) => {
@@ -48,13 +47,11 @@ class instantiateContract {
                     simpleContract
                         .deployed()
                         .then((instance) => {
-                            // Get the value from the contract to prove it worked.
                             return instance
                                 .getData
                                 .call({from: accounts[0]})
                         })
                         .then((result) => {
-                            // Update state with the result.
                             resolve(result.c[0])
                         })
                         .catch((error) => {

@@ -1,5 +1,4 @@
 import React, {Component} from 'react'
-import contract from 'truffle-contract'
 
 import instantiateContract from './utils/instantiateContract'
 
@@ -17,8 +16,6 @@ class App extends Component {
   }
 
   componentWillMount() {
-    // Get network provider and web3 instance. See utils/getWeb3 for more info.
-
     instantiateContract.setWeb3()
   }
 
@@ -36,7 +33,7 @@ class App extends Component {
 
   handleSecondClick(e) {
     e.preventDefault()
-    
+
     instantiateContract.getValue().then((result) => {
       this.setState({
         valueFromChain: result
